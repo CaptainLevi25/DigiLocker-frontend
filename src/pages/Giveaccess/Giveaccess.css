@@ -1,0 +1,284 @@
+.grandparent1 {
+    display: flex;
+  }
+  #myVideo1 {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }
+  .sidebar1 {
+    flex: 1;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 20px;
+    border: 3px solid rgb(16, 15, 15);
+  border: 0px solid rgba(100, 100, 100, 1);
+  border-radius: 4px;
+  background: linear-gradient(
+    50deg,
+    rgba(255, 255, 255, 0.4) 12%,
+    rgba(255, 255, 255, 0.1) 77%
+  );
+    
+  }
+  .parent1 {
+    flex: 6;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .heading1 {
+    height: 90px;
+    width: 100%;
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+  }
+  .infobox1 {
+    display: flex;
+  
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 600px;
+    width: 50%;
+    
+    border-radius: 20px;
+    border: 3px solid rgb(16, 15, 15);
+  border: 0px solid rgba(100, 100, 100, 1);
+  border-radius: 4px;
+  background: linear-gradient(
+    50deg,
+    rgba(255, 255, 255, 0.4) 12%,
+    rgba(255, 255, 255, 0.1) 77%
+  );
+  }
+  .p11,
+  .p21 {
+    width: 100%;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .sidebtn1 {
+    border: none;
+    cursor: pointer;
+  }
+  @keyframes rotateAnimation1 {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  .rotated-image1{
+      flex: 2;
+      animation: rotateAnimation1 5s linear infinite;
+        
+        
+  }
+  .inpuut1{
+      display: flex;
+      flex-direction: column;
+      flex: 3;
+      gap: 10px;
+     
+  }
+  #filled-basic1{
+      background: rgb(154, 154, 154);
+      border-radius: 23px;
+      
+  }
+  img{
+      height: 220px;
+      width: 230px;
+  }
+  .fill-button1 {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+     background-color: transparent;
+      color: #ffffff;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 20px;
+      border: 3px solid rgb(16, 15, 15);
+    border: 0px solid rgba(100, 100, 100, 1);
+    border-radius: 4px;
+    background: linear-gradient(
+      50deg,
+      rgba(255, 255, 255, 0.4) 12%,
+      rgba(255, 255, 255, 0.1) 77%
+    );
+    }
+    
+    .fill-button1:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: #485048;
+      transition: width 0.5s ease-in-out;
+      z-index: -1;
+    }
+    
+    .fill-button1:hover:before {
+      width: 100%;
+    }
+    
+   
+  
+  
+  
+  
+  
+  
+  
+  
+    /* ////// */
+    .form1{
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    input[type="file"] {
+      display: none;
+    }
+    
+    .choose1 {
+      background-color: initial;
+      background-image: linear-gradient(-180deg, #5aff15, #00b712);
+      border-radius: 6px;
+      color: #ffffff;
+      padding: 5px 10px;
+      border-radius: 6px;
+      margin-right: 10px;
+      padding-bottom: 10px;
+    }
+    .choose1:hover {
+      box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+    }
+    .textArea1 {
+      color: white;
+    } 
+    .upload1 {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      /* background-color: transparent; */
+      color: #ffffff;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 20px;
+      border: 3px solid rgb(16, 15, 15);
+    border: 0px solid rgba(100, 100, 100, 1);
+    border-radius: 4px;
+    background: linear-gradient(
+      50deg,
+      rgba(255, 255, 255, 0.4) 12%,
+      rgba(255, 255, 255, 0.1) 77%
+    );
+    }
+    
+    .upload1:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: #13d513;
+      transition: width 0.5s ease-in-out;
+      z-index: -1;
+    }
+    
+    .upload1:hover:before {
+      width: 100%;
+    }
+  
+    
+   
+    
+    .upload1:disabled,
+    .upload1[disabled] {
+      border: 1px solid #999999;
+      background-color: #cccccc;
+      color: #666666;
+    }
+  
+    .govtfun1{
+      display: none;
+    }
+    
+  
+    .govtfunt1{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      
+      /* transition: all 1s linear; */
+    }
+      
+    .submenu1{
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      margin-top: 20px;
+    } 
+    .shown{
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      background: linear-gradient(
+        50deg,
+        rgba(255, 255, 255, 0.4) 12%,
+        rgba(255, 255, 255, 0.1) 77%
+      );
+    }
+    .shownchildbtn{
+      position: absolute;
+      bottom: -100px;
+      left: 20px;
+
+
+    
+    }
+    .shownlist{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }

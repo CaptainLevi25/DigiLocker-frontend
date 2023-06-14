@@ -1,0 +1,255 @@
+.grandparent3 {
+    display: flex;
+  }
+  #myVideo3 {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }
+  .sidebar3 {
+    flex: 1;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 20px;
+    border: 3px solid rgb(16, 15, 15);
+  border: 0px solid rgba(100, 100, 100, 1);
+  border-radius: 4px;
+  background: linear-gradient(
+    50deg,
+    rgba(255, 255, 255, 0.4) 12%,
+    rgba(255, 255, 255, 0.1) 77%
+  );
+    
+  }
+  .parent3 {
+    flex: 6;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .heading3 {
+    height: 90px;
+    width: 100%;
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+  }
+  .infobox3 {
+    display: flex;
+  
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 600px;
+    width: 50%;
+    
+    border-radius: 20px;
+    border: 3px solid rgb(16, 15, 15);
+  border: 0px solid rgba(100, 100, 100, 1);
+  border-radius: 4px;
+  background: linear-gradient(
+    50deg,
+    rgba(255, 255, 255, 0.4) 12%,
+    rgba(255, 255, 255, 0.1) 77%
+  );
+  }
+  .p13,
+  .p23 {
+    width: 100%;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .sidebtn3 {
+    border: none;
+    cursor: pointer;
+  }
+  @keyframes rotateAnimation1 {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  .rotated-image3{
+      flex: 2;
+      animation: rotateAnimation1 5s linear infinite;
+        
+        
+  }
+  .inpuut3{
+      display: flex;
+      flex-direction: column;
+      flex: 3;
+      gap: 10px;
+     
+  }
+  #filled-basic3{
+      background: rgb(154, 154, 154);
+      border-radius: 23px;
+      
+  }
+  img{
+      height: 220px;
+      width: 230px;
+  }
+  .fill-button3 {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+     background-color: transparent;
+      color: #ffffff;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 20px;
+      border: 3px solid rgb(16, 15, 15);
+    border: 0px solid rgba(100, 100, 100, 1);
+    border-radius: 4px;
+    background: linear-gradient(
+      50deg,
+      rgba(255, 255, 255, 0.4) 12%,
+      rgba(255, 255, 255, 0.1) 77%
+    );
+    }
+    
+    .fill-button3:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: #485048;
+      transition: width 0.5s ease-in-out;
+      z-index: -1;
+    }
+    
+    .fill-button3:hover:before {
+      width: 100%;
+    }
+    
+   
+  
+  
+  
+  
+  
+  
+  
+  
+    /* ////// */
+    .form3{
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    input[type="file"] {
+      display: none;
+    }
+    
+    .choose3 {
+      background-color: initial;
+      background-image: linear-gradient(-180deg, #5aff15, #00b712);
+      border-radius: 6px;
+      color: #ffffff;
+      padding: 5px 10px;
+      border-radius: 6px;
+      margin-right: 10px;
+      padding-bottom: 10px;
+    }
+    .choose3:hover {
+      box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+    }
+    .textArea3 {
+      color: white;
+    } 
+    .upload3 {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      /* background-color: transparent; */
+      color: #ffffff;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 20px;
+      border: 3px solid rgb(16, 15, 15);
+    border: 0px solid rgba(100, 100, 100, 1);
+    border-radius: 4px;
+    background: linear-gradient(
+      50deg,
+      rgba(255, 255, 255, 0.4) 12%,
+      rgba(255, 255, 255, 0.1) 77%
+    );
+    }
+    
+    .upload3:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: #13d513;
+      transition: width 0.5s ease-in-out;
+      z-index: -1;
+    }
+    
+    .upload3:hover:before {
+      width: 100%;
+    }
+  
+    
+   
+    
+    .upload3:disabled,
+    .upload3[disabled] {
+      border: 1px solid #999999;
+      background-color: #cccccc;
+      color: #666666;
+    }
+  
+    .govtfun3{
+      display: none;
+    }
+    
+  
+    .govtfunt3{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      
+      /* transition: all 1s linear; */
+    }
+      
+    .submenu3{
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      margin-top: 20px;
+    } 
