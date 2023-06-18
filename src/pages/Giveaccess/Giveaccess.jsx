@@ -8,6 +8,7 @@ export default function Giveaccess({ contract, account, provider }) {
     const [list,setList]=useState(null);
     const  [add,setadd]= useState(null);
     const [see,setsee] = useState(null);
+    const [head,setHead]=useState("Government")
     const [pi1,setpi1] = useState(1);
     const sharing = async () => {
     //    const address = document.querySelector(".address").value;
@@ -19,6 +20,16 @@ export default function Giveaccess({ contract, account, provider }) {
       else if(pi1===4) {await contract.giveGeneralPhotosAccess(add)};
     //     setModalOpen(false);
       };
+      const del = async () => {
+        //    const address = document.querySelector(".address").value;
+        //    console.log(address)
+          
+          if(pi1===1) {try{await contract.removeGovernmentIdAccess(add)}catch{alert("This address do have access to your account")}}
+          else if(pi1===2) {try{await contract.removeMedicalRecordsAccess(add)}catch{alert("This address do have access to your account")}}
+         else if(pi1===3) {try{await contract.removeEducationalCertificatesAccess(add)}catch{alert("This address do have access to your account")}}
+          else if(pi1===4) {try{await contract.removeGeneralPhotosAccess(add)}catch{alert("This address do have access to your account")}};
+        //     setModalOpen(false);
+          };
    
         const accessList = async () => {
         
@@ -67,6 +78,12 @@ export default function Giveaccess({ contract, account, provider }) {
           console.log(list)
           setsee(!see)} catch(err){alert(err) }}
         }
+        useEffect(()=>{
+          if(pi1===1) setHead("Government");
+          else if(pi1===2) setHead("Medical");
+         else  if(pi1===3) setHead("Educational");
+          else if(pi1===4) setHead("General");
+          },[pi1])
               
           
       
@@ -91,7 +108,7 @@ export default function Giveaccess({ contract, account, provider }) {
               }}
               className="sidebtn1"
             >
-              <h2>Upload Ur Credentials</h2>
+              <h2>Upload Credentials</h2>
             </button>
           
           </div>
@@ -165,7 +182,7 @@ export default function Giveaccess({ contract, account, provider }) {
               {/* <button  onClick={accessList}> chechk  who has acces </button> */}
 
 
-        { !see  ?(<><h1 className="heading1">Personal Information</h1>
+        { !see  ?(<><h1 style={{color:"white"}}className="heading1">{head} Information</h1>
             <div className="infobox1">
               <div className="rotated-image1">
                 <img
@@ -176,16 +193,17 @@ export default function Giveaccess({ contract, account, provider }) {
               </div>
               <div className="inpuut1">
         
-                    <h1>Give Acess to your ______ documents</h1>
+                    <h1>Give Access to your {head} documents</h1>
                     
-      <TextField className='address' fullWidth label="fullWidth" id="fullWidth" onChange={(e)=>{setadd(e.target.value);console.log(e.target.value)}}/>
+      <TextField className='address' fullWidth label="Address" id="fullWidth" onChange={(e)=>{setadd(e.target.value);console.log(e.target.value)}}/>
                 <button
                   class="fill-button1"
                   onClick={sharing}
                 >
-                Share the Government info with others
+                Share  {head} photos with others
                 </button>
                 <button onClick={accessList} class = "fill-button1" >Check who has access</button>
+                <button onClick={del} class = "fill-button1" >Delete access</button>
                 {/* {
                     list && list.map((item,i)=>{
                         return()
@@ -196,10 +214,13 @@ export default function Giveaccess({ contract, account, provider }) {
             
         
             { list ?  list[0].map((item,i)=>{
-                  return( <div className='shownlist'><h1 style={{color:"white"}}>{item}</h1></div>
+
+                  return( 
+                  
+                  <div className='shownlist'><h1 style={{color:"white"}}>{item!=="0x0000000000000000000000000000000000000000"&&item}</h1></div>
 
 
-
+                  
 
                  )
                }): (<h1 style={{color : "white"}}>Empty list</h1>)}

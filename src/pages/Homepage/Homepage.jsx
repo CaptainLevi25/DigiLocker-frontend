@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Homepage.css";
 import axios from "axios";
 import TextField from "@mui/material/TextField";
@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import AnimatedPage from "../../AnimatedPage";
 export default function Homepage({ contract, account, provider }) {
   const [pi, setpi] = useState(1);
+  const [head,setHead]= useState("Government");
   const [name, setName] = useState("");
   const [file, setFile] = useState(null);
   const nav= useNavigate();
@@ -24,8 +25,9 @@ export default function Homepage({ contract, account, provider }) {
           url: "https://api.pinata.cloud/pinning/pinFileToIPFS",
           data: formData,
           headers: {
-            pinata_api_key: `4060f1bc65cc6dd146c1`,
-            pinata_secret_api_key: `b42d4530961e9d6eb8a7665d2d58ef224c13980d112b17411ee9f80b0770fb23`,
+            pinata_api_key: `ca0292fac6f26867ff46`,
+            pinata_secret_api_key: `
+            c316a29f8fe20918975a4f5b11a738feacbb2662a3eb2c694ab9545954146f5e`,
             "Content-Type": "multipart/form-data",
           },
         });
@@ -65,7 +67,12 @@ export default function Homepage({ contract, account, provider }) {
     e.preventDefault();
    
   };
-
+  useEffect(()=>{
+  if(pi===1) setHead("Government");
+  else if(pi===2) setHead("Medical");
+ else  if(pi===3) setHead("Educational");
+  else if(pi===4) setHead("General");
+  },[pi])
   return (
     <AnimatedPage>
     <>
@@ -84,7 +91,7 @@ export default function Homepage({ contract, account, provider }) {
               }}
               className="sidebtn"
             >
-              <h2 style={{backgroundColor:"green"}}>Upload Ur Credentials</h2>
+              <h2 style={{backgroundColor:"green"}}>__Upload Credentials_</h2>
             </button>
             <div className="govtfunt">
               <ul>
@@ -149,7 +156,7 @@ export default function Homepage({ contract, account, provider }) {
 
         <>
           <div className="parent">
-            <h1 className="heading">Personal Information</h1>
+            <h1 style={{color:"white"}} className="heading">{head} Information</h1>
             <div className="infobox">
               <div className="rotated-image">
                 <img

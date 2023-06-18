@@ -102,7 +102,7 @@ export default function Getmygovt({ contract, account, provider }) {
               }}
               className="sidebtn2"
             >
-              <h2>Upload Ur Credentials</h2>
+              <h2>Upload Credentials</h2>
             </button>
             <div className="govtfun2">
               <ul>
@@ -140,7 +140,7 @@ export default function Getmygovt({ contract, account, provider }) {
               }}
               className="sidebtn2"
             >
-              <h2>Give Access</h2>
+              <h2>Give Access to Others</h2>
             </button>
           </div>
           <div className="p21">
@@ -150,7 +150,7 @@ export default function Getmygovt({ contract, account, provider }) {
               }}
               className="sidebtn1"
             >
-              <h2 style={{ backgroundColor: "green" }}>____Get my data____</h2>
+              <h2 style={{ backgroundColor: "green" }}>____Get my data_____</h2>
             </button>
             <div className="govtfunt1">
               <ul>
@@ -170,7 +170,7 @@ export default function Getmygovt({ contract, account, provider }) {
                     }}
                     className="sidebtn1"
                   >
-                    <h3>Share Govt Id</h3>
+                    <h3>Get my Govt Ids</h3>
                   </button>
                 </div>
                 <hr />
@@ -190,7 +190,7 @@ export default function Getmygovt({ contract, account, provider }) {
                     }}
                     className="sidebtn1"
                   >
-                    <h3>Share Medical Id</h3>
+                    <h3>Get my Medical Ids</h3>
                   </button>
                   <hr />
                 </div>
@@ -210,7 +210,7 @@ export default function Getmygovt({ contract, account, provider }) {
                     }}
                     className="sidebtn1"
                   >
-                    <h3>Share educational id</h3>
+                    <h3>Get my educational ids</h3>
                   </button>
                   <hr />
                 </div>
@@ -230,7 +230,7 @@ export default function Getmygovt({ contract, account, provider }) {
                     }}
                     className="sidebtn1"
                   >
-                    <h3>Share General Photos</h3>
+                    <h3>Get my General Photos</h3>
                   </button>
                   <hr />
                 </div>

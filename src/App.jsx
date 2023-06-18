@@ -24,10 +24,8 @@ function App() {
   function sett(){
     setIsConnected(true);
   }
-  useEffect(() => {
-    // window.location.reload();
-    console.log(account);
-  }, [account]);
+
+ 
 
   // useEffect(() => {
   const connect = () => {
@@ -42,14 +40,15 @@ function App() {
 
           window.ethereum.on("accountsChanged", () => {
             //connect();
-             window.location.reload();
+           //  window.location.reload();
+             setIsConnected(false);
           });
           await provider.send("eth_requestAccounts", []);
           const signer = provider.getSigner();
           const address = await signer.getAddress();
           setAccount(address);
 
-          let contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+          let contractAddress = "0xCc87E22184F8167e843640a7cfBc4A663153542D";
 
           const contract = new ethers.Contract(
             contractAddress,
@@ -87,9 +86,9 @@ function App() {
           </button>
         </div>
       // )} */} 
-<button onClick={connect}>meta</button>
+{/* <button onClick={connect}>meta</button>
 <button onClick={()=>{nav("/giveaccess")}}>giveaccess</button>
-<button onClick={()=>{nav("/homepage")}}>homepage</button>
+<button onClick={()=>{nav("/homepage")}}>homepage</button> */}
 
       <Routes>
         <Route

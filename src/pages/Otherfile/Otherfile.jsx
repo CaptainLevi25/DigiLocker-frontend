@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Otherfile.css";
 import { TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,7 @@ export default function Otherfile({ contract, account, provider }) {
   const [shown, setShown] = useState(false);
   const [data, setdata] = useState("");
   const [n, setn] = useState(false);
+  const [head,setHead]= useState("Government")
   const getdata = async () => {
     if (g === 1) {
       let datarray = await contract.getMyGovernmentIDs();
@@ -84,6 +85,12 @@ export default function Otherfile({ contract, account, provider }) {
     // console.log(datarray);
     // const isEmpty = Object.keys(datarray).length == 0;
   };
+  useEffect(()=>{
+    if(g===1) setHead("Government");
+    else if(g===2) setHead("Medical");
+   else  if(g===3) setHead("Educational");
+    else if(g===4) setHead("General");
+    },[g])
 
   return (
     <AnimatedPage>
@@ -102,7 +109,7 @@ export default function Otherfile({ contract, account, provider }) {
               }}
               className="sidebtn3"
             >
-              <h2>Upload ur Credentials</h2>
+              <h2>Upload Credentials</h2>
             </button>
           </div>
           <div className="p23">
@@ -112,7 +119,7 @@ export default function Otherfile({ contract, account, provider }) {
               }}
               className="sidebtn3"
             >
-              <h2>Give Access</h2>
+              <h2>Give Access to Others</h2>
             </button>
           </div>
           <div className="p23">
@@ -122,7 +129,7 @@ export default function Otherfile({ contract, account, provider }) {
               }}
               className="sidebtn3"
             >
-              <h2>_Get my details_</h2>
+              <h2>Get my details</h2>
             </button>
           </div>
 
@@ -134,7 +141,7 @@ export default function Otherfile({ contract, account, provider }) {
               }}
               className="sidebtn3"
             >
-              <h2 style={{ backgroundColor: "green" }}>Get other details</h2>
+              <h2 style={{ backgroundColor: "green" }}>___Get other details__</h2>
             </button>
             <div className="govtfunt3">
               <ul>
@@ -237,7 +244,7 @@ export default function Otherfile({ contract, account, provider }) {
          </div> */}
             {!n ? (
               <>
-                <h1 className="heading3">Personal Information</h1>
+                <h1 style={{color:"white"}} className="heading3">{head} Information</h1>
                 <div className="infobox3">
                   <div className="rotated-image3">
                     <img
@@ -247,12 +254,12 @@ export default function Otherfile({ contract, account, provider }) {
                     />
                   </div>
                   <div className="inpuut3">
-                    <h1>Give Acess to your ______ documents</h1>
+                    <h1>Give Acess to your {head} documents</h1>
 
                     <TextField
-                      className="address"
+                      className="address3"
                       fullWidth
-                      label="fullWidth"
+                      label="Address"
                       id="fullWidth"
                       onChange={(e) => {
                         setText(e.target.value);
@@ -265,7 +272,7 @@ export default function Otherfile({ contract, account, provider }) {
                       }}
                       class="fill-button3"
                     >
-                      Get other Data and images
+                      Get other Documents
                     </button>
                     {/* <button class = "fill-button1" >Acess the  Government list</button> */}
                     {/* {
