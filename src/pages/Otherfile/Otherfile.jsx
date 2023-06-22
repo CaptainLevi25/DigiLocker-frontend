@@ -11,9 +11,10 @@ export default function Otherfile({ contract, account, provider }) {
   const [data, setdata] = useState("");
   const [n, setn] = useState(false);
   const [head,setHead]= useState("Government")
+  const [addm,setaddm] =useState("");
   const getdata = async () => {
     if (g === 1) {
-      let datarray = await contract.getMyGovernmentIDs();
+      let datarray = await contract.retrieveOtherGovernmentID(addm);
       if (datarray) {
         const str = datarray.toString();
         const str_array = str.split(",");
@@ -30,7 +31,7 @@ export default function Otherfile({ contract, account, provider }) {
         setn(true);
       }
     } else if (g === 2) {
-      let datarray = await contract.getMyMedicalRecords();
+      let datarray = await contract.retrieveOthersMedicalRecords(addm);
       if (datarray) {
         const str = datarray.toString();
         const str_array = str.split(",");
@@ -47,7 +48,7 @@ export default function Otherfile({ contract, account, provider }) {
         setn(true);
       }
     } else if (g === 3) {
-      let datarray = await contract.getMyEducationalCertificates();
+      let datarray = await contract.retrieveOthersEducationalCertificates(addm);
       if (datarray) {
         const str = datarray.toString();
         const str_array = str.split(",");
@@ -64,7 +65,7 @@ export default function Otherfile({ contract, account, provider }) {
         setn(true);
       }
     } else if (g === 4) {
-      let datarray = await contract.getMyGeneralPhotos();
+      let datarray = await contract.retrieveOthersGeneralPhotos(addm);
       if (datarray) {
         const str = datarray.toString();
         const str_array = str.split(",");
@@ -254,7 +255,7 @@ export default function Otherfile({ contract, account, provider }) {
                     />
                   </div>
                   <div className="inpuut3">
-                    <h1>Give Acess to your {head} documents</h1>
+                    <h1>See other {head} documents</h1>
 
                     <TextField
                       className="address3"
@@ -262,7 +263,7 @@ export default function Otherfile({ contract, account, provider }) {
                       label="Address"
                       id="fullWidth"
                       onChange={(e) => {
-                        setText(e.target.value);
+                        setaddm(e.target.value);
                         console.log(e.target.value);
                       }}
                     />

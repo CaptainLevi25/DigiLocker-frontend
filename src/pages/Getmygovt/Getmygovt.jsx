@@ -9,6 +9,7 @@ export default function Getmygovt({ contract, account, provider }) {
   const [n, setn] = useState(false);
   const getdata = async () => {
     if (g === 1) {
+      try{
       let datarray = await contract.getMyGovernmentIDs();
       if (datarray) {
         const str = datarray.toString();
@@ -23,9 +24,12 @@ export default function Getmygovt({ contract, account, provider }) {
         setdata(str_array);
         console.log("hello");
         console.log(data);
-        setn(true);
+        setn(true);}}catch{
+          console.log("cpold not find");
+        }
       }
-    } else if (g === 2) {
+     else if (g === 2) {
+      try{
       let datarray = await contract.getMyMedicalRecords();
       if (datarray) {
         const str = datarray.toString();
@@ -40,9 +44,12 @@ export default function Getmygovt({ contract, account, provider }) {
         setdata(str_array);
         console.log("hello");
         console.log(data);
-        setn(true);
+        setn(true);}}catch{
+          console.log("cpold not find");
+        }
       }
-    } else if (g === 3) {
+     else if (g === 3) {
+      try{
       let datarray = await contract.getMyEducationalCertificates();
       if (datarray) {
         const str = datarray.toString();
@@ -57,9 +64,12 @@ export default function Getmygovt({ contract, account, provider }) {
         setdata(str_array);
         console.log("hello");
         console.log(data);
-        setn(true);
+        setn(true);}}catch{
+          console.log("cpold not find");
+        }
       }
-    } else if (g === 4) {
+     else if (g === 4) {
+      try{
       let datarray = await contract.getMyGeneralPhotos();
       if (datarray) {
         const str = datarray.toString();
@@ -74,13 +84,17 @@ export default function Getmygovt({ contract, account, provider }) {
         setdata(str_array);
         console.log("hello");
         console.log(data);
-        setn(true);
+        setn(true);}}catch{
+          console.log("cpold not find");
+        }
       }
-    }
+    };
     // console.log(datarray);
     // console.log(datarray);
     // const isEmpty = Object.keys(datarray).length == 0;
-  };
+  useEffect(()=>{
+   account && getdata();
+  },[account,g])
 
   return (
     <AnimatedPage>
@@ -252,12 +266,13 @@ export default function Getmygovt({ contract, account, provider }) {
         <>
           <div className="parent2">
             {/* <button onClick={add}>add users </button> */}
-            {!n ? (
+            {/* {!n ? (
               <button className="fill-button2" onClick={getdata}>
                 get my data
               </button>
-            ) : (
-              <div>
+            ) : ( */}
+              <div >
+               
                 {data ? (
                   data.map((item, i) => {
                     return <img src={item} alt="" />;
@@ -272,11 +287,11 @@ export default function Getmygovt({ contract, account, provider }) {
                     }}
                     className="fill-button2"
                   >
-                    Go back
+                    {/* Go back */}
                   </button>
                 </div>
               </div>
-            )}
+            
           </div>
         </>
       </div>
